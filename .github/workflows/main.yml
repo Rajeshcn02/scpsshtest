@@ -17,5 +17,5 @@ jobs:
                username: ${{ secrets.USERNAME }}
                port: ${{ secrets.PORT }}
                key: ${{ secrets.KEY }}
-               source: "/home/runner/work/scpsshtest/scpsshtest/tests/a.txt"
+               source: "/home/runner/work/scpsshtest/scpsshtest/tests/*.txt"
                target: "/home/rajeshcn094"
