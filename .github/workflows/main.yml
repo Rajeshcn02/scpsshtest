@@ -15,4 +15,4 @@ jobs:
                port: ${{ secrets.PORT }}
                key: ${{ secrets.KEY }}
                source: "tests/a.txt,tests/b.txt"
-               target: "test"
+               target: "/home/rajeshcn094"
