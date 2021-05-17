@@ -20,6 +20,6 @@ jobs:
                source: "tests/*.txt"
                target: "/home/rajeshcn094"
                
-        - name: permission change
-          run: |
-           ssh server chmod 777 /home/rajeshcn094/tests
+        #- name: permission change
+        #  run: |
+        #  ssh server chmod 777 /home/rajeshcn094/tests
