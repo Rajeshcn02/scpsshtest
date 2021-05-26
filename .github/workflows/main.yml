@@ -10,6 +10,15 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v2
           
+        - name: Executing remote  command
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            USERNAME: ${{ secrets.USERNAME }}
+            PORT: ${{ secrets.PORT }}
+            KEY: ${{ secrets.KEY }}
+            script: chmod 777 /home/rajeshcn094/tests
+          
         - name: copy file via ssh key
           uses: appleboy/scp-action@master
           with:
@@ -20,14 +29,7 @@ jobs:
                source: "tests/*.txt"
                target: "/home/rajeshcn094"
                
-        - name: Executing remote  command
-          uses: appleboy/ssh-action@master
-          with:
-            host: ${{ secrets.HOST }}
-            USERNAME: ${{ secrets.USERNAME }}
-            PORT: ${{ secrets.PORT }}
-            KEY: ${{ secrets.KEY }}
-            script: chmod 777 /home/rajeshcn094/tests
+        
             
         #- name: permission change
         #  run: |
