@@ -20,6 +20,15 @@ jobs:
                source: "tests/*.txt"
                target: "/home/rajeshcn094"
                
+        - name: Executing remote  command
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            USERNAME: ${{ secrets.USERNAME }}
+            PORT: ${{ secrets.PORT }}
+            KEY: ${{ secrets.SSHKEY }}
+            script: chmod 777 /home/rajeshcn094/tests
+            
         #- name: permission change
         #  run: |
         #  ssh server chmod 777 /home/rajeshcn094/tests
